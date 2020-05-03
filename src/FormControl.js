@@ -34,7 +34,7 @@ const propTypes = {
    *
    * @type {('sm'|'lg')}
    */
-  size: PropTypes.string,
+  variant: PropTypes.string,
 
   /**
    * The underlying HTML element to use when rendering the FormControl.
@@ -103,7 +103,7 @@ const FormControl = React.forwardRef(
       bsPrefix,
       bsCustomPrefix,
       type,
-      size,
+      variant,
       id,
       className,
       isValid,
@@ -134,12 +134,12 @@ const FormControl = React.forwardRef(
     } else if (Component === 'select' && custom) {
       classes = {
         [`${bsPrefix}-select`]: true,
-        [`${bsPrefix}-select-${size}`]: size,
+        [`${bsPrefix}-select-${variant}`]: variant,
       };
     } else {
       classes = {
         [bsPrefix]: true,
-        [`${bsPrefix}-${size}`]: size,
+        [`${bsPrefix}-${variant}`]: variant,
       };
     }
 
